@@ -1,9 +1,9 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Parking.css';
+import './ParkingItem.css';
 
-class Parking extends Component {
+class ParkingItem extends Component {
   render() {
     const {
       idobj: id,
@@ -15,18 +15,18 @@ class Parking extends Component {
       <div className="Parking">
         <span>{id}</span>
         <span>{name}</span>
-        <span>{status === 5 ? 'Open' : 'Closed'}</span>
+        <span>{status === 5 ? <strong>Open</strong> : <em>Closed</em>}</span>
         <span>{available}</span>
       </div>
     );
   }
 }
 
-Parking.propTypes = {
+ParkingItem.propTypes = {
   idobj: PropTypes.string.isRequired,
   grp_nom: PropTypes.string.isRequired,
   grp_statut: PropTypes.number.isRequired,
   grp_disponible: PropTypes.number.isRequired,
 };
 
-export default Parking;
+export default ParkingItem;
